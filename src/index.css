@@ -1,2 +1,18 @@
+@font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter.ttf");
+}
+:root {
+    --headColor: rgb(170, 170, 213);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Inter";
+    color: #FFF;
+}
+
 body, html{padding: 0;margin: 0;}
-* {box-sizing: border-box;}
+body {
+    background-color: #0e1129;
+}

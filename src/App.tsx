@@ -1,9 +1,14 @@
 import {Outlet} from "react-router-dom"
+import styled from "styled-components";
+
+const H1 = styled.h1`
+  text-align: center
+`
 
 function App() {
   return (
     <>
-    <h1 style={{textAlign:"center"}}>Github Search</h1>
+    <H1>Github Search</H1>
     <Outlet/>
     </>
   );

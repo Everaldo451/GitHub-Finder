@@ -1,17 +1,16 @@
 import {useState} from "react"
 import Search from "../components/Search"
 import UserBox from "../components/UserBox"
-import UserType from "../Types.ts"
+import { UserType } from "../Types.ts"
 
 
 function Home() {
 
+  const [user,setUser] = useState<UserType|null>(null)
+  
   async function getuser(user:string) {
-    
     const response = await fetch(`https://api.github.com/users/${user}`)
-
     const json = await response.json()
-
     if (json.login) {
 
       const usertb = {
@@ -24,10 +23,7 @@ function Home() {
 
       setUser(usertb)
     } else {setUser(null)}
-    
   }
-
-  const [user,setUser] = useState<UserType|null>(null)
   
 
   return (
