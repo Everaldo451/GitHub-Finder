@@ -5,3 +5,11 @@ export type UserType = {
   followers: number,
   following: number
 };
+
+export type RepositoryType = {
+  name: string, 
+  forks: number,
+  language: string,
+  html_url: string,
+  watchers: number
+}

@@ -4,6 +4,8 @@
 }
 :root {
     --headColor: rgb(170, 170, 213);
+    --customCyan: rgb(0, 204, 204);
+    --customPurple: rgb(127, 76, 230)
 }
 
 * {

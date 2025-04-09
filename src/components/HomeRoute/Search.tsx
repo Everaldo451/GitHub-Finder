@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styled from "styled-components"
 import { CiSearch } from "react-icons/ci"
-import CommonSection from "./Container";
+import { CommonSection } from "../CommonSection";
 
 
 const SearchBar = styled.div`

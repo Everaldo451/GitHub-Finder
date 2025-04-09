@@ -1,28 +1,21 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-const Container = styled.div`
+const ContainerDiv = styled.div`
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    & > *:nth-child(n+2) {
+        margin-top: 20px;
+    }
 `
 
-const Section = styled.div`
-    width: 50%;
-    padding: 20px;
-    border-radius: 15px;
-    background-color: rgb(59, 59, 120);
-`
-
-
-interface CommonSectionProps {
-    children: React.ReactNode
-}
-
-export default function CommonSection({children}:CommonSectionProps) {
+export default function Container({children}:{children:React.ReactNode}) {
     return (
-        <Container>
-            <Section>
-                {children}
-            </Section>
-        </Container>
+        <ContainerDiv>
+            {children}
+        </ContainerDiv>
     )
 }
+
+

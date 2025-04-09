@@ -2,18 +2,15 @@ import { Link } from "react-router-dom";
 import { MdLocationPin } from "react-icons/md";
 import styled from "styled-components"
 
-import CommonSection from "./Container.tsx";
-import { UserType } from "../Types.ts"
+import { CommonSection } from "../CommonSection.tsx";
+import FollowDisplayer from "./FollowDisplayer.tsx";
+import { UserType } from "../../Types.ts";
 
 const Box = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-
-
-  --customCyan: rgb(0, 204, 204);
-  --customPurple: rgb(127, 76, 230)
 `;
 
 const ImageContainer = styled.div`
@@ -36,12 +33,6 @@ const H3 = styled.h3`
   margin: 0;
 `
 
-const FollowSection = styled.section`
-  margin: 20px 0;
-  columns: 2;
-  column-rule: 2px solid white;
-`
-
 const NavLink = styled(Link)`
   padding: 15px;
   border-radius: 5px;
@@ -49,28 +40,35 @@ const NavLink = styled(Link)`
   text-decoration: none;
 `
 
+const FollowSection = styled.section`
+  margin: 20px 0;
+  columns: 2;
+  column-gap: 20px;
+  column-rule: 1px solid white;
+`
+
 type BoxProps = {
-  props: UserType
+  user: UserType
 }
 
-function UserBox({props}:BoxProps) {
+function UserBox({user}:BoxProps) {
 
   return (
     <CommonSection>
     <Box>
         <ImageContainer>
-          <Image src={props.avatar_url}/>
+          <Image src={user.avatar_url}/>
         </ImageContainer>
-        <H2>{props.login}</H2>
+        <H2>{user.login}</H2>
         <H3>
           <MdLocationPin style={{fill: "var(--customCyan)"}}/>
-          location:{props.location}
+          {user.location}
         </H3>
         <FollowSection>
-          <p>seguidores: <span>{props.followers}</span></p>
-          <p>seguindo: <span>{props.following}</span></p>
+          <FollowDisplayer follow={user.followers}>Seguidores</FollowDisplayer>
+          <FollowDisplayer follow={user.following}>Seguindo</FollowDisplayer>
         </FollowSection>
-        <NavLink to={""}>Ver melhores Projetos</NavLink>
+        <NavLink to={"/repos"}>Ver melhores Projetos</NavLink>
       </Box>
     </CommonSection>
   )
