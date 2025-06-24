@@ -1,19 +1,29 @@
-# Github Finder
+# 🔍 GitHub Finder
 
-This is a web project where it is possible to search for GitHub users, see their statistics, and view the five top-rated repositories of that user.
+A simple web application that allows you to search for GitHub users, view their profile statistics, and see their top 5 most starred repositories.
 
-## Technologies Used:
+![Status: Development](https://img.shields.io/badge/Status-Development-yellow)
 
-- React Vite
+## 🧰 Technologies Used
 
-## Installation
+- ⚛️ React (Vite)
+- 💅 Styled Components (for styling)
+- 🌐 GitHub REST API
+
+## 🚀 Installation
+
+Clone the repository and install the dependencies:
 
 ```bash
 npm install
 ```
 
-## Running
+## ▶️ Running the App
+
+Start the development server:
 
 ```bash
 npm run dev
 ```
+
+Then open http://localhost:5173 in your browser.
